@@ -1,14 +1,12 @@
 
 <html>
-    var = visitors;
-    <script>
+        <script>
         function test_func(){
             alert("Thank you for your visit :)");
         }
 
    
-   function myFunction() {
-            visitors = ["Omar", "Jhon", "Tim", "Carla"];
+   function myFunction(visitors) {
             visitors.toString();
             document.getElementById("demo").innerHTML = visitors;
         }
@@ -20,7 +18,7 @@
             <div>
               <label for="uname">Please leave your name here and let us know you visited us :) </label>
               <input type="text" id="uname" name="vistor_name" placeholder="Type your name here">
-              visitors.push(vistor_name);
+              //visitors.push(vistor_name);
                      
             </div>
             <div>
@@ -32,5 +30,8 @@
           </form>
           <p id="demo"></p>
 
-          <body onload="myFunction();"></body>
+          <body 
+          var visitors = ["Omar", "Jhon", "Tim", "Carla"];
+          onload="myFunction();">
+        </body>
 </html>
