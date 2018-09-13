@@ -5,6 +5,12 @@
             alert("Thank you for your visit :)");
         }
 
+        function myFunction() {
+            var visitors = ["Omar", "Jhon", "Tim", "Carla"];
+            visitors.toString();
+            document.getElementById("demo").innerHTML = visitors;
+        }
+
     </script>
 
    <h1> Hello and Welcome to the CFD in Porous Media Club </h1> <br />
@@ -24,12 +30,6 @@
 
             </div>
           </form>
-          <body>
-                <script>
-                 var visitors = ["Omar", "Jhon", "Tim", "Carla"];
-                 visitors.toString();
-                 document.getElementById("demo").innerHTML = visitors;
-                </script>
-          </body>
 
+          <body onload="myfunction();"></body>
 </html>
