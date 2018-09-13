@@ -1,5 +1,6 @@
 
 <html>
+    var = visitors;
     <script>
         function test_func(){
             alert("Thank you for your visit :)");
@@ -7,7 +8,7 @@
 
    
    function myFunction() {
-            var visitors = ["Omar", "Jhon", "Tim", "Carla"];
+            visitors = ["Omar", "Jhon", "Tim", "Carla"];
             visitors.toString();
             document.getElementById("demo").innerHTML = visitors;
         }
@@ -18,8 +19,8 @@
        <form>
             <div>
               <label for="uname">Please leave your name here and let us know you visited us :) </label>
-              <input type="text" id="uname" name="name"
-                     placeholder="Type your name here">
+              <input type="text" id="uname" name="vistor_name" placeholder="Type your name here">
+              visitors.push(vistor_name);
                      
             </div>
             <div>
