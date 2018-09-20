@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+        <h1> Homework 2 - 1.125 </h1> <br />
+        <h2> Crime Heatmap form LAPD </h2>
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=visualization"></script>
+        <script src="cary-nc.json" ></script>
+        <div id="map-canvas" style="height:600px;width:800px"></div>
+
+        <script type="text/javascript">
+
+            function point(crime){
+                var point = {};
+                temp = crime[33];
+                point.latitude = temp[1];
+                point.longitude = temp[2];
+                return point;
+            }
+            
+            var points = cary.ucr.map(point);
+            </script>
+            <script src="heatmap-cary.js"></script>
+
+</html>
