@@ -87,7 +87,18 @@ ui.withdraw = `
 
 ui.transactions = `
     <!-- ------------- YOUR CODE: Transactions UI ------------- --> 
-    <h1> Transactions </h1>
+    <h1> Please log-in to view your Transactions </h1>
+    <div class="form-group">
+    <label for="exampleInputEmail4">Name</label>
+    <input type="email" class="form-control" id="exampleInputEmail39" aria-describedby="emailHelp" placeholder="Enter Name">
+</div>
+    <div class="form-group">
+        <label for="exampleInputPassword3">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword39" placeholder="Password">
+    </div>
+    <button type="button" onclick="transactions()" class="btn btn-primary"> Log in</button>
+    <br />
+    <br />
 
 `;
 
@@ -122,8 +133,6 @@ navigation.innerHTML += ui.navigation;
 
 var loadCreateAccount = function(){
     target.innerHTML = ui.createAccount;
-
-   
 };
 
 var loadLogin = function(){

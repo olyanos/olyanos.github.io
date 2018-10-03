@@ -8,46 +8,11 @@
       "transactions": ""
     },
     {
-      "name": "j.nb",
-      "email": "k@k",
-      "password": "ih",
-      "balance": 1978970086,
-      "transactions": "none"
-    },
-    {
-      "name": "j.nb'jvafsb",
-      "email": "k@kfdba",
-      "password": "ih",
-      "balance": 0,
-      "transactions": "none"
-    },
-    {
       "name": "Omar",
-      "email": "omar@mit.edu",
-      "password": "1234",
-      "balance": 601,
-      "transactions": "none"
-    },
-    {
-      "name": "samir",
-      "email": "k11@k",
-      "password": "ih",
-      "balance": 0,
-      "transactions": "none"
-    },
-    {
-      "name": "qwkdf",
-      "email": "kwwwww@k",
-      "password": "ih",
-      "balance": 0,
-      "transactions": "none"
-    },
-    {
-      "name": "lssss",
-      "email": "new@noew",
-      "password": "ih",
-      "balance": 0,
-      "transactions": "none"
+      "email": "Omar@mit.edu",
+      "password": "pass",
+      "balance": 27851,
+      "transactions": "Account Created,  withdraw = 981,  deposite = 28832, "
     }
   ]
 }

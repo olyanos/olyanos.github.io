@@ -77,10 +77,18 @@ function withdraw() {
 }
 
 function transactions() {
-    // -------------------------------------
-    //  YOUR CODE
-    //  Get all user transactions
-    // -------------------------------------
+    var temp1 = document.getElementById("exampleInputEmail39").value;
+    var temp3 = '/'
+    var temp4 = '/account/transactions'
+    var temp6 = temp4+temp3+temp1;
+    var url = temp6;
+    superagent
+    .get(url)
+    .end(function(err,res){
+        if(err){ console.log(err);}
+        else { console.log(res);}
+
+    })
 }
 
 function balance() {

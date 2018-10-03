@@ -15,13 +15,12 @@ db.defaults({ accounts: [{name:'',email:'',balance:'',password:'', transactions:
 // required data store structure
 
 app.get('/account/create/:name/:email/:password', function (req, res) {
-
     var new_account = {
         "name" : req.params.name,
         "email" : req.params.email,
         "password" : req.params.password,
         "balance":0,
-        "transactions":'none'
+        "transactions":'Account Created, ' 
 
     };
     db.get('accounts').push(new_account).write();
@@ -30,7 +29,7 @@ app.get('/account/create/:name/:email/:password', function (req, res) {
 app.get('/account/login/:email/:password', function (req, res) {
 
 var current_account = db.get('accounts').find({email:req.params.email}).value();
-console.log('welcome '+current_account.name+ 'your balance is = '+current_account.balance);
+console.log('welcome '+current_account.name+ ' your balance is = '+current_account.balance);
 
 });
 
@@ -45,9 +44,10 @@ app.get('/account/deposit/:email/:amount', function (req, res) {
 
    var current_account = db.get('accounts').find({email:req.params.email}).value();
    new_balance = current_account.balance + Number(req.params.amount);
+   new_transactions = current_account.transactions + (' deposite = '+req.params.amount+', ');
    db.get('accounts')
    .find({ email: req.params.email })
-   .assign({ balance: new_balance})
+   .assign({ balance: new_balance , transactions:new_transactions})
    .write()
    console.log('new amount deposited')
 
@@ -56,17 +56,19 @@ app.get('/account/deposit/:email/:amount', function (req, res) {
 app.get('/account/withdraw/:email/:amount', function (req, res) {
     var current_account = db.get('accounts').find({email:req.params.email}).value();
     new_balance = current_account.balance - Number(req.params.amount);
+    new_transactions = current_account.transactions + (' withdraw = '+req.params.amount+', ');
     db.get('accounts')
     .find({ email: req.params.email })
-    .assign({ balance: new_balance})
+    .assign({ balance: new_balance, transactions:new_transactions})
     .write()
  console.log('new amount withdrawed')
 });
 
 app.get('/account/transactions/:email', function (req, res) {
+    var current_account = db.get('accounts').find({email:req.params.email}).value();  
+    transactions_1 = current_account.transactions;
+    console.log('Hello '+ current_account.name +' your history of transactions is the following: '+transactions_1+' your current balance = '+current_account.balance)
 
-    // YOUR CODE
-    // Return all transactions for account
 });
 
 app.get('/account/all', function (req, res) {
