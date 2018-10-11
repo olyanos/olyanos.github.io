@@ -1,15 +1,16 @@
+// var low     = require('lowdb');
+// var fs      = require('lowdb/adapters/FileSync');
+// var adapter = new fs('db.json');
+// var db      = low(adapter);
 
 function create() {
     // -------------------------------------
-    console.log('I am in create account in api.js');
-
     var obj = {name:document.getElementById("exampleInputEmail2").value,
     email: document.getElementById("exampleInputEmail1").value
     ,balance:"0",
     password: document.getElementById("exampleInputPassword1").value
     ,transaction:"create"};
     alert('Hello '+obj.name+', your account has been created');
-    console.log('debug that');
     // -------------------------------------  
     var temp1 = String(obj.name);
     var temp2 = String(obj.email);
@@ -18,7 +19,6 @@ function create() {
     var temp5 = '/'
     var temp6  = temp4+temp5+temp1+temp5+temp2+temp5+temp3;
     var url = temp6;
-
     superagent
         .get(url)
         .end(function(err,res){
@@ -26,6 +26,7 @@ function create() {
             else { console.log(res);}
 
         })
+        console.log('Hello '+obj.name+', your account has been created');
 }
 
 function login() {
@@ -38,9 +39,12 @@ function login() {
     .get(url)
     .end(function(err,res){
         if(err){ console.log(err);}
-        else { console.log(res);}
+        else { console.log(res.text);}
 
     })
+
+    // var current_account = db.get('accounts').find({temp1}).value();
+    // console.log('welcome '+current_account.name+ ' your balance is = '+current_account.balance);
 }
 
 function deposit() {
@@ -54,9 +58,10 @@ function deposit() {
         .get(url)
         .end(function(err,res){
             if(err){ console.log(err);}
-            else { console.log(res);}
+            else { console.log(res.text);}
 
         })
+
 
 }
 
@@ -71,7 +76,7 @@ function withdraw() {
         .get(url)
         .end(function(err,res){
             if(err){ console.log(err);}
-            else { console.log(res);}
+            else { console.log(res.text);}
 
         })
 }
@@ -86,7 +91,7 @@ function transactions() {
     .get(url)
     .end(function(err,res){
         if(err){ console.log(err);}
-        else { console.log(res);}
+        else { console.log(res.text);}
 
     })
 }
@@ -100,7 +105,7 @@ function balance() {
     .get(url)
     .end(function(err,res){
         if(err){ console.log(err);}
-        else { console.log(res);}
+        else { console.log(res.text);}
 
     })
 }
@@ -114,10 +119,35 @@ function allData() {
         .get(url)
         .end(function(err,res){
             if(err){ console.log(err);}
-            else { console.log(res);}
+            else { console.log(res.text);}
 
         })
     
     // -------------------------------------
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.log('');

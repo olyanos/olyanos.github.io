@@ -29,15 +29,14 @@ app.get('/account/create/:name/:email/:password', function (req, res) {
 app.get('/account/login/:email/:password', function (req, res) {
 
 var current_account = db.get('accounts').find({email:req.params.email}).value();
-console.log('welcome '+current_account.name+ ' your balance is = '+current_account.balance);
-
+res.send('welcome '+current_account.name+ ' your balance is = '+current_account.balance);
 });
 
 app.get('/account/get/:email', function (req, res) {
 
     var current_account = db.get('accounts').find({email:req.params.email}).value();
     balance = current_account.balance;
-    console.log('Hello '+ current_account.name +' your balance is = '+balance)
+    res.send('Hello '+ current_account.name +' your balance is = '+balance)
 });
 
 app.get('/account/deposit/:email/:amount', function (req, res) {
@@ -49,7 +48,7 @@ app.get('/account/deposit/:email/:amount', function (req, res) {
    .find({ email: req.params.email })
    .assign({ balance: new_balance , transactions:new_transactions})
    .write()
-   console.log('new amount deposited')
+   res.send('new amount deposited')
 
 });
 
@@ -61,24 +60,54 @@ app.get('/account/withdraw/:email/:amount', function (req, res) {
     .find({ email: req.params.email })
     .assign({ balance: new_balance, transactions:new_transactions})
     .write()
- console.log('new amount withdrawed')
+    res.send('new amount withdrawed')
 });
 
 app.get('/account/transactions/:email', function (req, res) {
     var current_account = db.get('accounts').find({email:req.params.email}).value();  
     transactions_1 = current_account.transactions;
-    console.log('Hello '+ current_account.name +' your history of transactions is the following: '+transactions_1+' your current balance = '+current_account.balance)
+    res.send('Hello '+ current_account.name +' your history of transactions is the following: '+transactions_1+' your current balance = '+current_account.balance)
 
 });
 
 app.get('/account/all', function (req, res) {
 
-    console.log((db.get('accounts').value()));
+    res.send((db.get('accounts').value()));
 
 });
 // start server
 app.listen(3000,function(){
 
-    console.log('Running on 3000');
+    res.send('Running on 3000');
 }
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.log('');
