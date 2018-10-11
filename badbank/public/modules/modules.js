@@ -37,8 +37,8 @@ ui.login = `
     <!-- ------------- YOUR CODE: Login UI ------------- --> 
     <h1> Login </h1>
     <div class="form-group">
-    <label for="exampleInputEmail3">Name</label>
-    <input type="email" class="form-control" id="exampleInputEmail7" aria-describedby="emailHelp" placeholder="Enter Name">
+    <label for="exampleInputEmail3">Email</label>
+    <input type="email" class="form-control" id="exampleInputEmail7" aria-describedby="emailHelp" placeholder="Enter Email">
 </div>
     <div class="form-group">
         <label for="exampleInputPassword3">Password</label>
