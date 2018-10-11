@@ -23,10 +23,9 @@ function create() {
         .get(url)
         .end(function(err,res){
             if(err){ console.log(err);}
-            else { console.log(res);}
+            else { console.log(res.text);}
 
         })
-        console.log('Hello '+obj.name+', your account has been created');
 }
 
 function login() {
@@ -43,8 +42,6 @@ function login() {
 
     })
 
-    // var current_account = db.get('accounts').find({temp1}).value();
-    // console.log('welcome '+current_account.name+ ' your balance is = '+current_account.balance);
 }
 
 function deposit() {
@@ -126,28 +123,3 @@ function allData() {
     // -------------------------------------
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-console.log('');
